@@ -20,24 +20,27 @@ bearer_token = 'AAAAAAAAAAAAAAAAAAAAAF%2FkbgEAAAAAuR1%2BB1D0s%2BxyrWfr73daYqWOwa
 access_token = '1439283988473032710-FsV8cJeAOr6ybg1KaMctXodK860X5L'
 access_secret_token = 'QdjWPwbnyWoIGoZF458UCZM76FWpDN14xXUTAwmdMD8iv'
 
+print('startando...')
+sleep(11)
 #cliente = tw.Client(bearer_token=config['TWITTER']['bearer_token'], consumer_key=config['TWITTER']['api_key'], consumer_secret=config['TWITTER']['api_secret_key'], access_token=config['TWITTER']['acess_token'], access_token_secret=config['TWITTER']['acess_secret_token'])
 cliente = tw.Client(bearer_token=bearer_token, consumer_key=api_key, consumer_secret=api_secret_key, access_token=access_token, access_token_secret=access_secret_token)
-end_time = datetime.now() #- timedelta(days=1)
+end_time = datetime.now() - timedelta(hours=3)
+start_time = datetime.now() - timedelta(hours=4)
 #.strftime('%d/%m/%Y %H:%M')
 
 
-resposta1 = cliente.search_recent_tweets(query='tiro shopping nova américa -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
-resposta2 = cliente.search_recent_tweets(query='tiroteiro shopping nova américa -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
-resposta3 = cliente.search_recent_tweets(query='assalto shopping nova américa -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
-resposta4 = cliente.search_recent_tweets(query='assaltante shopping nova américa -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
-resposta5 = cliente.search_recent_tweets(query='arrastão shopping nova américa -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
+resposta1 = cliente.search_recent_tweets(query='tiro shopping nova américa -is:retweet lang:pt -is:quote -is:reply',start_time=start_time,end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
+resposta2 = cliente.search_recent_tweets(query='tiroteiro shopping nova américa -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,start_time=start_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
+resposta3 = cliente.search_recent_tweets(query='assalto shopping nova américa -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,start_time=start_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
+resposta4 = cliente.search_recent_tweets(query='assaltante shopping nova américa -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,start_time=start_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
+resposta5 = cliente.search_recent_tweets(query='arrastão shopping nova américa -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,start_time=start_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
 
-resposta6 = cliente.search_recent_tweets(query='tiro madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
-resposta7 = cliente.search_recent_tweets(query='tiroteio madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
-resposta8 = cliente.search_recent_tweets(query='assalto madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
-resposta9 = cliente.search_recent_tweets(query='assaltante madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
-resposta10 = cliente.search_recent_tweets(query='arrastão madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
-resposta11 = cliente.search_recent_tweets(query='madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
+resposta6 = cliente.search_recent_tweets(query='tiro madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,start_time=start_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
+resposta7 = cliente.search_recent_tweets(query='tiroteio madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,start_time=start_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
+resposta8 = cliente.search_recent_tweets(query='assalto madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,start_time=start_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
+resposta9 = cliente.search_recent_tweets(query='assaltante madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,start_time=start_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
+resposta10 = cliente.search_recent_tweets(query='arrastão madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,start_time=start_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
+resposta11 = cliente.search_recent_tweets(query='madureira -is:retweet lang:pt -is:quote -is:reply',end_time=end_time,start_time=start_time,max_results=10,user_auth=True,tweet_fields=['context_annotations', 'created_at', 'author_id'], place_fields=['full_name']).data
 
 dados = []
 
@@ -86,3 +89,4 @@ for dado in dados:
             except Exception as e:
                 print(e)
         
+print('processo encerrado !')
